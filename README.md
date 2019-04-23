@@ -15,7 +15,7 @@ Latent Dirichlet Allocation model (LDA; Blei et al. 2003) is a hierarchical Baye
 
 In this repo, you can find:
 
-- the [lecture slides](),
+- the [lecture slides](https://github.com/Nazliozum/CPSC503_LDA-lecture/blob/master/lecture.pdf),
 - the [final report]() explaining in detail the project goals and content,
 - a [simple demonstration]() of LDA in R language, and
 - an [assignment]() designed to assess the learning experience of students
