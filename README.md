@@ -17,8 +17,8 @@ In this repo, you can find:
 
 - the [lecture slides](https://github.com/Nazliozum/CPSC503_LDA-lecture/blob/master/lecture.pdf),
 - the [final report](https://github.com/Nazliozum/CPSC503_LDA-lecture/blob/master/report/report.pdf) explaining in detail the project goals and content,
-- a [simple demonstration]() of LDA in R language, and
-- an [assignment]() designed to assess the learning experience of students
+- a [simple demonstration](https://github.com/Nazliozum/CPSC503_LDA-lecture/blob/master/demo/demo.md) of LDA in R language, and
+- an [assignment](https://github.com/Nazliozum/CPSC503_LDA-lecture/blob/master/assignment/assignment.pdf) designed to assess the learning experience of students
 
 ## Resources
 
