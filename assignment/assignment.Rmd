@@ -1,0 +1,24 @@
+---
+title: "Assignment on LDA"
+subtitle: "CPSC 503 - Pedagogical Project"
+date: 'April 2019'
+output: 
+  pdf_document:
+    number_sections: true
+
+urlcolor: blue
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+*This is a self-assesed assignment intended to assess students' understanding of the Latent Dirichlet Allocation (LDA) topic modelling algorithm. Possible answers are provided [here]().*
+
+# Warm-up (30 points)
+
+Determine an application of LDA. Describe how the authors have used LDA. What do you like and/or dislike about this application?
+
+# Comprehension (30 points)
+
+# Application (40 points)
