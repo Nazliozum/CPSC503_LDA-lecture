@@ -21,6 +21,11 @@ Determine an application of LDA (does not have to be in academic research). Desc
 
 # Comprehension (30 points)
 
+**a.** What is a generative model, i.e. what makes a topic model generative? What are the core assumptions?
+
+**b.** How is the LDA different from the pLSI model?
+
+**c.** Is perplexity a satisfactory measure for evaluating the results of the LDA model? What are/can be some alternative measures?
 
 # Application (40 points)
 
