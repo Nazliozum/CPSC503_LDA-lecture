@@ -56,7 +56,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Introduction
 
-Looking at the thematic structure provides a way to explore and digest the content of a group of documents. Humans can accomplish such exploration smoothly. Indeed, researchers in the past mostly relied on manual qualitative analysis to extract information from unstructured textual data. However, the vast amount of digitized knowledge available online has encouraged the development of new computational tools that can extract the thematic structure of documents automatically, which enable researchers to produce the same knowledge while saving significantly in time and cost. Specifically for such purpose, machine learning scholars have developed what is called **probabilistic topic modelling**, a group of algorithms that do not require human-annotated data and simply discover the themes that emerge in a document by analyzing its words.
+Looking at the thematic structure provides a way to explore and digest the content of a group of documents. Humans can accomplish such exploration smoothly. Indeed, researchers in the past mostly relied on manual qualitative analysis to extract information from unstructured textual data. However, the vast amount of digitized knowledge available online has encouraged the development of new computational tools that can extract the thematic structure of documents automatically, which enable researchers to produce the same knowledge while saving significantly in time and cost. Specifically for such purpose, machine learning scholars have developed what is called probabilistic topic modelling, a group of algorithms that do not require human-annotated data and simply discover the themes that emerge in a document by analyzing its words.
 
 Topic modelling provides methods for automatically organizing, understanding, searching, and summarizing large electronic archives. In other words, it is used to discover the structure or topical patterns in a collection of documents, label new documents according to these topics, and use the labels to organize and search textual data. For example, a topic model can automatically divide a collection of customer reviews posted on a website into clusters according to the use of words within each review, which provides valuable insights more efficiently and at lower cost in comparison with analyses conducted by human labour. Such automation offers a useful method to explore and structure a large set of documents, offering great opportunities for research in various disciplines. These exploratory models are not limited to text corpora as they can be used for collaborative filtering, content-based image retrieval, and bioinformatics [@boyd-graber_applications_2017]. Under the purpose of exploration of topic models within larges sets of data, automated topic modeling has been used in a variety of contexts including financial fraud detection [@dong_leveraging_2018], social media analytics [@cummings_virtual_2018], information security [@abbasi_cybergate:_2008; @samtani_exploring_2017; @yue_see_2019], e-commerce [@adamopoulos_impact_2018], online communities behaviors, and even systematic literature reviews [@sidorova_uncovering_2008].
 
@@ -116,7 +116,7 @@ Topic modeling began with a linear algebra approach called Latent Semantic Analy
 
 Topic models are based upon the idea that documents are mixtures of topics, where a topic is a probability distribution over words. These models specify a simple probabilistic procedure by which documents can be generated, hence topic models are generative models. A generative model describes how words in documents might be generated on the basis of latent (random) variables. The goal is to find the best set of latent variables that can explain the observed data (i.e., observed words in documents), assuming that the model actually generated the data. To make a new document, one chooses a distribution over topics. Then, for each word in that document, one chooses a topic at random according to this distribution, and draws a word from that topic. Standard statistical techniques can be used to invert this process, inferring the set of topics that were responsible for generating a collection of documents. This generative process does not make any assumptions about the order of words as they appear in documents. The only information relevant to the model is the frequency of words that are produced. Ignoring the word order is defined as the bag-of-words assumption, and is common to many statistical models of language including LSA. Topic models do not require any prior annotations or labelling of documents, i.e. the topics are uncovered via the analysis of solely the original texts. Discovered topics can be used to organize, summarize, and annotate documents at a scale that would require considerably more time to accomplish by human annotation. 
 
-There is a distinct advantage in the topic modelling approach in which the semantic properties of documents and words are expressed with probabilistic topics rather than spatial representation. That is, each topic is individually interpretable, providing a probability distribution over words that picks out a coherent cluster of correlated terms [@steyvers_probabilistic_2006]. A variety of probabilistic topic models have been used to analyze the content of documents and the meaning of words. These models all use the fundamental idea – that a document is a mixture of topics. In what follows, we explain this common base drawing heavily on the explanation provided by @steyvers_probabilistic_2006.
+There is a distinct advantage in the topic modelling approach in which the semantic properties of documents and words are expressed with probabilistic topics rather than spatial representation. That is, each topic is individually interpretable, providing a probability distribution over words that picks out a coherent cluster of correlated terms [@steyvers_probabilistic_2006]. A variety of probabilistic topic models have been used to analyze the content of documents and the meaning of words. These models all use the fundamental idea – that a document is a mixture of topics. In what follows, I explain this common base drawing heavily on the explanation provided by @steyvers_probabilistic_2006.
 
 ### Core Process
 
@@ -126,7 +126,7 @@ Each word $w_i$ in a document is generated by first sampling a topic from the to
 P(w_i) = \sum_{j=1}^{T}P(w_i \mid z_i=j)\ P(z_i=j)
 \end{align}
 
-To simplify notation, let $\phi^{(j)} = P(w \mid z=j)$ refer to the multinomial distribution over words for topic $j$, and $\theta^{(d)} = P(z)$ refer to the multinomial distribution over topics for document $d$. Our notation is summarized in Table 1.
+To simplify notation, let $\phi^{(j)} = P(w \mid z=j)$ refer to the multinomial distribution over words for topic $j$, and $\theta^{(d)} = P(z)$ refer to the multinomial distribution over topics for document $d$. The notation is summarized in Table 1.
 
 \begin{longtable}[c]{| p{3cm} | p{12cm} |}
 \caption{Notation for topic modelling}
@@ -144,7 +144,7 @@ $N_d$ & number of word tokens in document $d$ \\ \hline
 $N = \sum N_d$ & total number of word tokens \\ \hline
 \end{longtable}
 
-As mentioned earlier, various different topic models exist and although they follow the same fundamental idea, they make slightly different statistical assumptions. Here, we explore a few of these topic models that have shown to be used frequently in information systems research.
+As mentioned earlier, various different topic models exist and although they follow the same fundamental idea, they make slightly different statistical assumptions. Here, I explore a few of these topic models that have shown to be used frequently in information systems research.
 
 ### Algorithms of Topic Modelling
 
@@ -156,7 +156,7 @@ As mentioned earlier, various different topic models exist and although they fol
 P(d, w_n) = P(d) \sum_{z}P(w_n \mid z)\ P(z \mid d)
 \end{align}
 
-As $p(z \mid d)$ specifies the mixture weights of the topics for a particular document $d$, pLSI is capable of capturing that a document may contain multiple topics. The $d$ is a dummy index into the list of documents in the training set. pLSI laid the foundation for LDA [@boyd-graber_applications_2017], which we explain next.
+As $p(z \mid d)$ specifies the mixture weights of the topics for a particular document $d$, pLSI is capable of capturing that a document may contain multiple topics. The $d$ is a dummy index into the list of documents in the training set. pLSI laid the foundation for LDA [@boyd-graber_applications_2017], which is explained next.
 
 #### Latent Dirichlet Allocation (LDA)
 
@@ -192,7 +192,7 @@ Although this posterior distribution is quite difficult to compute, there exist 
 
 ## Interpreting Results
 
-The most typical evaluation of topic models involves measuring the performance of a a model performs when predicting unobserved documents. Specifically, when estimating the probability of unseen held-out document given a set of training documents, a “good” model should give rise to a higher probability of held-out documents [@bao_simultaneously_2014]. The _perplexity_ metric is common in language modelling for this purpose. Perplexity can be defined as the predicted number of equally likely words for a word position on average. It is a monotonically decreasing function of the log-likelihood, so a lower perplexity over a held-out document would indicate a higher log-likelihood, which in turn indicates better predictive performance. Our explanation of perplexity here is cursory; a more complete discussion of this metric can be found in @azzopardi_investigating_2003 and @blei_latent_2003.
+The most typical evaluation of topic models involves measuring the performance of how a model performs when predicting unobserved documents. Specifically, when estimating the probability of unseen held-out document given a set of training documents, a “good” model should give rise to a higher probability of held-out documents [@bao_simultaneously_2014]. The _perplexity_ metric is common in language modelling for this purpose. Perplexity can be defined as the predicted number of equally likely words for a word position on average. It is a monotonically decreasing function of the log-likelihood, so a lower perplexity over a held-out document would indicate a higher log-likelihood, which in turn indicates better predictive performance. A more complete discussion of this metric can be found in @azzopardi_investigating_2003 and @blei_latent_2003.
 
 ## Applications
 
